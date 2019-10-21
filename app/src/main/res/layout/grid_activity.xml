@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="4"
+    android:rowCount="6"
+    android:useDefaultMargins="true"
+    >
+
+    <TextView
+        android:id="@string/titulo"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/titulo"
+        android:textSize="32sp"
+        ></TextView>
+
+
+    <CalendarView
+        android:id="@string/calendario"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center_horizontal"
+        ></CalendarView>
+</GridLayout>
