@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">GridLayoutPresentacion</string>
     <string name="titulo">Prueba</string>
-    <string name="calendario"></string>
+    <string name="calendario">Calendario</string>
+    <string name="teclado">Teclado</string>
+    <string name="pulsar">Pulsar</string>
 </resources>

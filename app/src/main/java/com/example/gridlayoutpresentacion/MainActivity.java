@@ -3,6 +3,8 @@ package com.example.gridlayoutpresentacion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,4 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_activity);
     }
+
+
+    public void verValor(View v){
+        //Obtenemos el valor del edit text
+        EditText campoText = (EditText) findViewById(R.id.teclado);
+    }
 }
+
