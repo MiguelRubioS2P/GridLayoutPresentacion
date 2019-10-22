@@ -3,5 +3,8 @@
     <string name="titulo">Prueba</string>
     <string name="calendario">Calendario</string>
     <string name="teclado">Teclado</string>
+    <string name="fecha">Fecha</string>
     <string name="pulsar">Pulsar</string>
+    <string name="pro">Modo Pro</string>
+    <string name="crear">Crear</string>
 </resources>

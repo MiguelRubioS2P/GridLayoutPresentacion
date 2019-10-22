@@ -38,4 +38,35 @@
         android:layout_gravity="center_horizontal"
         android:onClick="verValor"
         android:text="@string/pulsar"></Button>
+
+    <EditText
+        android:id="@+id/fecha"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="00/00/0000"
+        android:inputType="text"
+        android:visibility="invisible"
+        ></EditText>
+
+    <Button
+        android:id="@+id/crear"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center_horizontal"
+        android:onClick="crearFecha"
+        android:text="@string/crear"
+        android:visibility="invisible"
+        ></Button>
+
+    <CheckBox
+        android:id="@+id/pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center"
+        android:onClick="activarModo"
+        android:text="Modo Pro?"></CheckBox>
+
+
 </GridLayout>

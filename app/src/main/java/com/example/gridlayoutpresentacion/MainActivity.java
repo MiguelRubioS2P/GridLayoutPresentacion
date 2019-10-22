@@ -5,21 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CheckBox pro;
+    private TextView titulo;
+    private EditText campoFecha ;
+    private Button crear ;
+    private EditText campoText ;
+    private CalendarView calendario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_activity);
+
+        pro = (CheckBox) findViewById(R.id.pro);
+        titulo = (TextView) findViewById(R.id.titulo);
+        campoFecha = (EditText) findViewById(R.id.fecha);
+        crear = findViewById(R.id.crear);
+        campoText = (EditText) findViewById(R.id.teclado);
+        calendario = (CalendarView) findViewById(R.id.calendario);
+
     }
 
-    public long cumpleMiguel(String fecha){
+    public long cumpleFecha(String fecha){
         long cumple = 0;
 
         String date = fecha;
@@ -39,27 +57,55 @@ public class MainActivity extends AppCompatActivity {
         return cumple;
     }
 
+    public void crearFecha(View v){
+
+        String nombre;
+        String fecha;
+
+        nombre = campoText.getText().toString();
+        fecha = campoFecha.getText().toString();
+
+        if(nombre.isEmpty()){
+            campoText.setError("No se puso un nombre");
+        }else if(fecha.isEmpty()){
+            campoFecha.setError("No se puso una fecha");
+        }else{
+            calendario.setDate( cumpleFecha(fecha),true,true);
+            Toast.makeText(this,"Cumpleaños de " + nombre, Toast.LENGTH_LONG).show();
+            campoText.setText("");
+            campoFecha.setText("");
+        }
+
+    }
+
+    public void activarModo(View v){
+
+        if(pro.isChecked()){
+            titulo.setText("Modo Pro");
+            campoFecha.setVisibility(View.VISIBLE);
+            crear.setVisibility(View.VISIBLE);
+            pro.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
     public void verValor(View v){
 
-        //Obtenemos el valor del edit text
-        EditText campoText = (EditText) findViewById(R.id.teclado);
-        TextView titulo = (TextView) findViewById(R.id.titulo);
-        CalendarView calendario = (CalendarView) findViewById(R.id.calendario);
-
-        if(campoText.getText().toString().equals("Miguel")){
-            calendario.setDate( cumpleMiguel("29/8/1996"),true,true);
+        if(campoText.getText().toString().equals("Miguel") || campoText.getText().toString().equals("miguel")){
+            calendario.setDate( cumpleFecha("29/8/1996"),true,true);
             campoText.setText("");
         }
 
-        if(campoText.getText().toString().equals("Miguel Jesús")){
-            calendario.setDate( cumpleMiguel("29/9/1998"),true,true);
+        if(campoText.getText().toString().equals("Miguel Jesús") || campoText.getText().toString().equals("MJ")){
+            calendario.setDate( cumpleFecha("29/9/1998"),true,true);
             campoText.setText("");
         }
 
-        if(campoText.getText().toString().equals("Marta")){
-            calendario.setDate( cumpleMiguel("21/7/1999"),true,true);
+        if(campoText.getText().toString().equals("Marta") || campoText.getText().toString().equals("marta")){
+            calendario.setDate( cumpleFecha("21/7/1999"),true,true);
             campoText.setText("");
         }
+        
     }
 }
 
