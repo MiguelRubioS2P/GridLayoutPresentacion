@@ -19,13 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.grid_activity);
     }
 
-
-    public void verValor(View v){
-
-        //Obtenemos el valor del edit text
-        EditText campoText = (EditText) findViewById(R.id.teclado);
-        TextView titulo = (TextView) findViewById(R.id.titulo);
-        CalendarView calendario = (CalendarView) findViewById(R.id.calendario);
+    public long cumpleMiguel(){
+        long cumple = 0;
 
         String date = "29/8/1996";
         String parts[] = date.split("/");
@@ -39,12 +34,21 @@ public class MainActivity extends AppCompatActivity {
         calendar.set(Calendar.MONTH, (month - 1));
         calendar.set(Calendar.DAY_OF_MONTH, day);
 
-        long milliTime = calendar.getTimeInMillis();
+        cumple = calendar.getTimeInMillis();
+
+        return cumple;
+    }
+
+    public void verValor(View v){
+
+        //Obtenemos el valor del edit text
+        EditText campoText = (EditText) findViewById(R.id.teclado);
+        TextView titulo = (TextView) findViewById(R.id.titulo);
+        CalendarView calendario = (CalendarView) findViewById(R.id.calendario);
 
         if(campoText.getText().toString().equals("Miguel")){
-            calendario.setDate( milliTime,true,true);
+            calendario.setDate( cumpleMiguel(),true,true);
             campoText.setText("");
-            //campoText.setText("");
         }
 
     }
