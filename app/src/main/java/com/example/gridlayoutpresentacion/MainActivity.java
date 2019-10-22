@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.grid_activity);
     }
 
-    public long cumpleMiguel(){
+    public long cumpleMiguel(String fecha){
         long cumple = 0;
 
-        String date = "29/8/1996";
+        String date = fecha;
         String parts[] = date.split("/");
 
         int day = Integer.parseInt(parts[0]);
@@ -47,10 +47,19 @@ public class MainActivity extends AppCompatActivity {
         CalendarView calendario = (CalendarView) findViewById(R.id.calendario);
 
         if(campoText.getText().toString().equals("Miguel")){
-            calendario.setDate( cumpleMiguel(),true,true);
+            calendario.setDate( cumpleMiguel("29/8/1996"),true,true);
             campoText.setText("");
         }
 
+        if(campoText.getText().toString().equals("Miguel Jesús")){
+            calendario.setDate( cumpleMiguel("29/9/1998"),true,true);
+            campoText.setText("");
+        }
+
+        if(campoText.getText().toString().equals("Marta")){
+            calendario.setDate( cumpleMiguel("21/7/1999"),true,true);
+            campoText.setText("");
+        }
     }
 }
 
