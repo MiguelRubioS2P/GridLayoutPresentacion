@@ -1,8 +1,3 @@
 # GridLayoutPresentacion
-## Presentación/proyecto para sacar el 10
-* Pasarlo bien 
-* Jugad con el código
-* Cread una rama en github 
-* En vuestra propia rama vuestras pruebas
-* La que sea mejor la pasamos a master
-* Y sacamos el 10 
+## Guardar cumpleaños
+Para encontrar los datos hay que usar el explorador de android studio 
