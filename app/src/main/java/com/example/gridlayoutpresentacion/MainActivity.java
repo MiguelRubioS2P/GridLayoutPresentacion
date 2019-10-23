@@ -16,9 +16,11 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declaramos variables que usaremos en el MainActivity Version 1.4
     private CheckBox pro;
     private TextView titulo;
     private EditText campoFecha ;
+    private Button pulsar;
     private Button crear ;
     private EditText campoText ;
     private CalendarView calendario;
@@ -28,15 +30,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_activity);
 
+        //inicializamos variables.
         pro = (CheckBox) findViewById(R.id.pro);
         titulo = (TextView) findViewById(R.id.titulo);
         campoFecha = (EditText) findViewById(R.id.fecha);
+        pulsar = findViewById(R.id.pulsar);
         crear = findViewById(R.id.crear);
         campoText = (EditText) findViewById(R.id.teclado);
         calendario = (CalendarView) findViewById(R.id.calendario);
 
     }
 
+    //recibe un string fecha con formato 00/00/0000 y lo convierte en un tipo long Version 1.1
     public long cumpleFecha(String fecha){
         long cumple = 0;
 
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         return cumple;
     }
 
+    //Mostrar la fecha indicada junto un mensaje tipo Toast. Usamos setError. Version 1.3
     public void crearFecha(View v){
 
         String nombre;
@@ -78,17 +84,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //controlar checkbox. Version 1.2
     public void activarModo(View v){
 
         if(pro.isChecked()){
             titulo.setText("Modo Pro");
             campoFecha.setVisibility(View.VISIBLE);
+            pulsar.setEnabled(false);
             crear.setVisibility(View.VISIBLE);
             pro.setVisibility(View.INVISIBLE);
         }
 
     }
 
+    //Modo simple, añadir un nombre y mostrar la fecha correspondiente. Version 1.0
     public void verValor(View v){
 
         if(campoText.getText().toString().equals("Miguel") || campoText.getText().toString().equals("miguel")){

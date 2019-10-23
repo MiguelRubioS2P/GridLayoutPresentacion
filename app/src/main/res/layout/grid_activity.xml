@@ -46,9 +46,8 @@
         android:ems="10"
         android:gravity="center"
         android:hint="00/00/0000"
-        android:inputType="text"
-        android:visibility="invisible"
-        ></EditText>
+        android:inputType="date"
+        android:visibility="invisible"></EditText>
 
     <Button
         android:id="@+id/crear"
