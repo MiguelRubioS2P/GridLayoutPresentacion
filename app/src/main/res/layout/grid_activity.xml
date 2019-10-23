@@ -49,6 +49,15 @@
         android:inputType="date"
         android:visibility="invisible"></EditText>
 
+    <CheckBox
+        android:id="@+id/pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center"
+        android:onClick="activarModo"
+        android:text="Modo Pro?"></CheckBox>
+
     <Button
         android:id="@+id/crear"
         android:layout_columnSpan="4"
@@ -58,14 +67,7 @@
         android:visibility="invisible"
         ></Button>
 
-    <CheckBox
-        android:id="@+id/pro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="4"
-        android:layout_gravity="center"
-        android:onClick="activarModo"
-        android:text="Modo Pro?"></CheckBox>
+
 
 
 </GridLayout>
