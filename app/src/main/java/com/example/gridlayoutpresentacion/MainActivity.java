@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText campoText ;
     private CalendarView calendario;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(campoText.getText().toString().equals("Miguel") || campoText.getText().toString().equals("miguel")){
             calendario.setDate( cumpleFecha("29/8/1996"),true,true);
+            campoText.setText("");
+        }
+
+        if(campoText.getText().toString().equals("Fran") || campoText.getText().toString().equals("fran")){
+            calendario.setDate( cumpleFecha("2/7/1996"),true,true);
             campoText.setText("");
         }
 
