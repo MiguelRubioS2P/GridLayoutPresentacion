@@ -3,6 +3,7 @@ package com.example.gridlayoutpresentacion;
 import androidx.annotation.IntegerRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void ir(View view){
+        Intent i = new Intent(this,prueba.class);
+        startActivity(i);
+    }
+
     //recibe un string fecha con formato 00/00/0000 y lo convierte en un tipo long Version 1.1
     public long cumpleFecha(String fecha){
         long cumple = 0;
@@ -80,8 +86,11 @@ public class MainActivity extends AppCompatActivity {
         nombre = campoText.getText().toString();
         fecha = campoFecha.getText().toString();
 
-        if(nombre.isEmpty()){
+        if(nombre.isEmpty() && fecha.isEmpty()){
             campoText.setError("No se puso un nombre");
+            campoFecha.setError("No se puso una fecha");
+        }else if(nombre.isEmpty()){
+            campoFecha.setError("No se puso un nombre");
         }else if(fecha.isEmpty()){
             campoFecha.setError("No se puso una fecha");
         }else{
@@ -89,9 +98,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Cumpleaños de " + nombre, Toast.LENGTH_LONG).show();
             campoText.setText("");
             campoFecha.setText("");
+            sp.edit().putString(nombre,fecha).apply();
         }
-
-        sp.edit().putString(nombre,fecha).apply();
 
     }
 

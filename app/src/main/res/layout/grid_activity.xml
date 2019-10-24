@@ -67,6 +67,13 @@
         android:onClick="activarModo"
         android:text="Modo Pro?"></CheckBox>
 
-
+    <Button
+        android:id="@+id/ir"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center_horizontal"
+        android:onClick="ir"
+        android:text="Datos"
+        android:visibility="invisible"
+        ></Button>
 
 </GridLayout>
