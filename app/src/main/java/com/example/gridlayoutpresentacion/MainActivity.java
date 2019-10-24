@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // estado
     public void ir(View view){
         Intent i = new Intent(this,prueba.class);
         startActivity(i);
