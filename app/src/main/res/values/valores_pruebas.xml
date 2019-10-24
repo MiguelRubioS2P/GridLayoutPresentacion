@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tituloPrueba">Prueba Borrar</string>
+    <string name="borrarPrueba">Borrar</string>
+    <string name="campoPrueba">campoPrueba</string>
+
+</resources>

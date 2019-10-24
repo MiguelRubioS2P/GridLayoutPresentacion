@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public void ir(View view){
         Intent i = new Intent(this,prueba.class);
         startActivity(i);
+        finish();
     }
 
     //recibe un string fecha con formato 00/00/0000 y lo convierte en un tipo long Version 1.1
@@ -169,6 +170,12 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.borrar){
             //llevar a la actividad de borrar
             ir(null);
+            return true;
+        }
+
+        if(id == R.id.agregar){
+            //llevar a la actividad de borrar
+
             return true;
         }
 

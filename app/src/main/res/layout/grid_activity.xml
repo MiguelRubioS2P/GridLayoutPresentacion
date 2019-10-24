@@ -63,6 +63,7 @@
             android:layout_column="1"
             android:layout_gravity="center"
             android:onClick="activarModo"
+            android:visibility="invisible"
             android:text="Modo Pro?"></CheckBox>
 
         <Button
