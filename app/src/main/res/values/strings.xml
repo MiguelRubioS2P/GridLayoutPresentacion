@@ -1,10 +1,17 @@
 <resources>
+    <!-- grid_activity.xml -->
     <string name="app_name">GridLayoutPresentacion</string>
     <string name="titulo">Calendari</string>
     <string name="calendario">Calendario</string>
     <string name="teclado">Teclado</string>
     <string name="fecha">Fecha</string>
-    <string name="pulsar">Pulsar</string>
+    <string name="pulsar">Ir</string>
     <string name="pro">Modo Pro</string>
     <string name="crear">Ver</string>
+
+    <!-- delete_birthdays.xml -->
+
+    <!-- add_birthdays.xml -->
+
+
 </resources>
