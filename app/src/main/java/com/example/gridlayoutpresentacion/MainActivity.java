@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
             campoText.setText("");
             campoFecha.setText("");
             sp.edit().putString(nombre,fecha).apply();
+
+            //para borrar hay que usar remove
         }
 
     }
