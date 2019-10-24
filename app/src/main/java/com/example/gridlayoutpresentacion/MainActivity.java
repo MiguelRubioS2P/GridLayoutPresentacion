@@ -3,7 +3,10 @@ package com.example.gridlayoutpresentacion;
 import androidx.annotation.IntegerRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Button crear ;
     private EditText campoText ;
     private CalendarView calendario;
+    private SharedPreferences sp;
+
 
 
     @Override
@@ -40,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         campoText = (EditText) findViewById(R.id.teclado);
         calendario = (CalendarView) findViewById(R.id.calendario);
 
+        //Prueba datos
+        String defaultShared = getPackageName() + "_preferences";
+        sp = getSharedPreferences(defaultShared,MODE_PRIVATE);
+
+    }
+
+    public void ir(View view){
+        Intent i = new Intent(this,prueba.class);
+        startActivity(i);
     }
 
     //recibe un string fecha con formato 00/00/0000 y lo convierte en un tipo long Version 1.1
@@ -66,14 +80,18 @@ public class MainActivity extends AppCompatActivity {
     //Mostrar la fecha indicada junto un mensaje tipo Toast. Usamos setError. Version 1.3
     public void crearFecha(View v){
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String nombre;
         String fecha;
 
         nombre = campoText.getText().toString();
         fecha = campoFecha.getText().toString();
 
-        if(nombre.isEmpty()){
+        if(nombre.isEmpty() && fecha.isEmpty()){
             campoText.setError("No se puso un nombre");
+            campoFecha.setError("No se puso una fecha");
+        }else if(nombre.isEmpty()){
+            campoFecha.setError("No se puso un nombre");
         }else if(fecha.isEmpty()){
             campoFecha.setError("No se puso una fecha");
         }else{
@@ -81,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Cumpleaños de " + nombre, Toast.LENGTH_LONG).show();
             campoText.setText("");
             campoFecha.setText("");
+            sp.edit().putString(nombre,fecha).apply();
         }
 
     }
@@ -91,9 +110,16 @@ public class MainActivity extends AppCompatActivity {
         if(pro.isChecked()){
             titulo.setText("Modo Pro");
             campoFecha.setVisibility(View.VISIBLE);
-            pulsar.setEnabled(false);
             crear.setVisibility(View.VISIBLE);
-            pro.setVisibility(View.INVISIBLE);
+            pulsar.setEnabled(false);
+            //pro.setVisibility(View.INVISIBLE);
+            pro.setText("Buscar");
+        }else{
+            crear.setVisibility(View.INVISIBLE);
+            campoFecha.setVisibility(View.INVISIBLE);
+            pulsar.setEnabled(true);
+            titulo.setText("Buscar");
+            pro.setText("Modo pro?");
         }
 
     }
@@ -101,23 +127,23 @@ public class MainActivity extends AppCompatActivity {
     //Modo simple, añadir un nombre y mostrar la fecha correspondiente. Version 1.0
     public void verValor(View v){
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String campo = campoText.getText().toString();
+        String prefStringFecha = sp.getString(campo,"");
+
         if(campoText.getText().toString().equals("Miguel") || campoText.getText().toString().equals("miguel")){
             calendario.setDate( cumpleFecha("29/8/1996"),true,true);
             campoText.setText("");
         }
+
 
         if(campoText.getText().toString().equals("Fran") || campoText.getText().toString().equals("fran")){
             calendario.setDate( cumpleFecha("2/7/1996"),true,true);
             campoText.setText("");
         }
 
-        if(campoText.getText().toString().equals("Miguel Jesús") || campoText.getText().toString().equals("MJ")){
-            calendario.setDate( cumpleFecha("29/9/1998"),true,true);
-            campoText.setText("");
-        }
-
-        if(campoText.getText().toString().equals("Marta") || campoText.getText().toString().equals("marta")){
-            calendario.setDate( cumpleFecha("21/7/1999"),true,true);
+        if(!prefStringFecha.isEmpty()){
+            calendario.setDate(cumpleFecha(prefStringFecha),true,true);
             campoText.setText("");
         }
         
