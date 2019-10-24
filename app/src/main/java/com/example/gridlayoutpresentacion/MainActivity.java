@@ -102,7 +102,15 @@ public class MainActivity extends AppCompatActivity {
             titulo.setText("Modo Pro");
             campoFecha.setVisibility(View.VISIBLE);
             crear.setVisibility(View.VISIBLE);
-            pro.setVisibility(View.INVISIBLE);
+            pulsar.setEnabled(false);
+            //pro.setVisibility(View.INVISIBLE);
+            pro.setText("Buscar");
+        }else{
+            crear.setVisibility(View.INVISIBLE);
+            campoFecha.setVisibility(View.INVISIBLE);
+            pulsar.setEnabled(true);
+            titulo.setText("Buscar");
+            pro.setText("Modo pro?");
         }
 
     }
