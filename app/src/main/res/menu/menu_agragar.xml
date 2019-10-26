@@ -10,8 +10,8 @@
         ></item>
 
     <item
-        android:id="@+id/agregarM"
-        android:title="Añadir"
+        android:id="@+id/borrarM"
+        android:title="Borrar"
         ></item>
 
 </menu>

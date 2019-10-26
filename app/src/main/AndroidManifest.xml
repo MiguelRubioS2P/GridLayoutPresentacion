@@ -19,6 +19,9 @@
         <activity android:name=".Prueba">
 
         </activity>
+        <activity android:name=".PruebaAgregar">
+
+        </activity>
     </application>
 
 </manifest>

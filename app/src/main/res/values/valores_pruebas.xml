@@ -7,5 +7,6 @@
     <string name="tituloAgregar">Prueba Agregar</string>
     <string name="agregarPrueba">Agregar</string>
     <string name="campoAPrueba">campoPrueba</string>
+    <string name="campoFPrueba">Fecha</string>
 
 </resources>

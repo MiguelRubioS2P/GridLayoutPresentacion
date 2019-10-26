@@ -59,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void agregar(View view){
+        Intent i = new Intent(this,PruebaAgregar.class);
+        startActivity(i);
+        finish();
+    }
+
+
+
     //recibe un string fecha con formato 00/00/0000 y lo convierte en un tipo long Version 1.1
     public long cumpleFecha(String fecha){
         long cumple = 0;
@@ -78,35 +86,6 @@ public class MainActivity extends AppCompatActivity {
         cumple = calendar.getTimeInMillis();
 
         return cumple;
-    }
-
-    //Mostrar la fecha indicada junto un mensaje tipo Toast. Usamos setError. Version 1.3
-    public void crearFecha(View v){
-
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String nombre;
-        String fecha;
-
-        nombre = campoText.getText().toString();
-        fecha = campoFecha.getText().toString();
-
-        if(nombre.isEmpty() && fecha.isEmpty()){
-            campoText.setError("No se puso un nombre");
-            campoFecha.setError("No se puso una fecha");
-        }else if(nombre.isEmpty()){
-            campoFecha.setError("No se puso un nombre");
-        }else if(fecha.isEmpty()){
-            campoFecha.setError("No se puso una fecha");
-        }else{
-            calendario.setDate( cumpleFecha(fecha),true,true);
-            Toast.makeText(this,"Cumpleaños de " + nombre, Toast.LENGTH_LONG).show();
-            campoText.setText("");
-            campoFecha.setText("");
-            sp.edit().putString(nombre,fecha).apply();
-
-            //para borrar hay que usar remove
-        }
-
     }
 
     //controlar checkbox. Version 1.2
@@ -154,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         
     }
 
+    //----------------------------------------------------------------------------------------------
     @Override public boolean onCreateOptionsMenu(Menu menu){
 
         getMenuInflater().inflate(R.menu.menu_en_activity,menu);
@@ -166,15 +146,15 @@ public class MainActivity extends AppCompatActivity {
 
         int id = opcionMenu.getItemId();
 
-        if(id == R.id.borrar){
+        if(id == R.id.borrarM){
             //llevar a la actividad de borrar
             ir(null);
             return true;
         }
 
-        if(id == R.id.agregar){
-            //llevar a la actividad de borrar
-
+        if(id == R.id.agregarM){
+            //llevar a la actividad de agregar
+            agregar(null);
             return true;
         }
 

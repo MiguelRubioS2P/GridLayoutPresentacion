@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PruebaAgregar">
 
     <TextView
         android:id="@+id/tituloAgregar"
@@ -20,9 +20,11 @@
         android:id="@+id/agregarPrueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="156dp"
+        android:onClick="crearFecha"
         android:text="@string/agregarPrueba"
         app:layout_constraintEnd_toEndOf="@+id/campoAPrueba"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/campoAPrueba"
         app:layout_constraintTop_toBottomOf="@+id/campoAPrueba" />
 
@@ -31,11 +33,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
-        android:gravity="center"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/campoAPrueba"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloAgregar" />
+
+    <EditText
+        android:id="@+id/campoFPrueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:hint="00/00/0000"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/campoAPrueba"
+        app:layout_constraintTop_toBottomOf="@+id/campoAPrueba" />
 </androidx.constraintlayout.widget.ConstraintLayout>
