@@ -1,6 +1,5 @@
 package com.example.gridlayoutpresentacion;
 
-import androidx.annotation.IntegerRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     // estado
     public void ir(View view){
-        Intent i = new Intent(this,prueba.class);
+        Intent i = new Intent(this, Prueba.class);
         startActivity(i);
         finish();
     }

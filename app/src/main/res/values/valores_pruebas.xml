@@ -4,5 +4,8 @@
     <string name="tituloPrueba">Prueba Borrar</string>
     <string name="borrarPrueba">Borrar</string>
     <string name="campoPrueba">campoPrueba</string>
+    <string name="tituloAgregar">Prueba Agregar</string>
+    <string name="agregarPrueba">Agregar</string>
+    <string name="campoAPrueba">campoPrueba</string>
 
 </resources>

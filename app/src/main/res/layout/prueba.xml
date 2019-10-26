@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:layout_column="4"
-    android:rowCount="6"
-    android:useDefaultMargins="true"
-    >
-
-    <Button
-        android:id="@+id/button"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:onClick="volver"
-        android:text="volver" />
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/datosGuardados"
-        android:layout_row="2"
-        android:text="Datos Guardados"
-        android:gravity="center"
-        ></TextView>
+        android:id="@+id/tituloAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/tituloAgregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</GridLayout>
+    <Button
+        android:id="@+id/agregarPrueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:text="@string/agregarPrueba"
+        app:layout_constraintEnd_toEndOf="@+id/campoAPrueba"
+        app:layout_constraintStart_toStartOf="@+id/campoAPrueba"
+        app:layout_constraintTop_toBottomOf="@+id/campoAPrueba" />
+
+    <EditText
+        android:id="@+id/campoAPrueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:gravity="center"
+        android:ems="10"
+        android:hint="@string/campoAPrueba"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloAgregar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

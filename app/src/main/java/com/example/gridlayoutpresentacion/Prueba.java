@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class prueba extends AppCompatActivity {
+public class Prueba extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class prueba extends AppCompatActivity {
         finish();
     }
 
-
+    //Creación del menú
     @Override public boolean onCreateOptionsMenu(Menu menu){
 
         getMenuInflater().inflate(R.menu.menu_prueba,menu);
@@ -35,6 +35,7 @@ public class prueba extends AppCompatActivity {
 
     }
 
+    //Saber que actividad es la seleccionada.
     @Override public boolean onOptionsItemSelected(MenuItem opcionMenu){
 
         int id = opcionMenu.getItemId();
@@ -46,7 +47,7 @@ public class prueba extends AppCompatActivity {
         }
 
         if(id == R.id.agregar){
-            //llevar a la actividad de borrar
+            //llevar a la actividad de agregar
 
             return true;
         }
