@@ -146,15 +146,17 @@ public class MainActivity extends AppCompatActivity {
 
         int id = opcionMenu.getItemId();
 
-        if(id == R.id.borrarM){
-            //llevar a la actividad de borrar
-            ir(null);
-            return true;
-        }
+
 
         if(id == R.id.agregarM){
             //llevar a la actividad de agregar
             agregar(null);
+            return true;
+        }
+
+        if(id == R.id.borrarM){
+            //llevar a la actividad de borrar
+            ir(null);
             return true;
         }
 

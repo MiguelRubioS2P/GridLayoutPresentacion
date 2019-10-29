@@ -89,15 +89,17 @@ public class PruebaAgregar extends AppCompatActivity {
 
         int id = opcionMenu.getItemId();
 
-        if(id == R.id.borrarM){
-            //llevar a la actividad de borrar
-            eliminar(null);
-            return true;
-        }
+
 
         if(id == R.id.inicioM){
             //llevar a la actividad de inicio
             volver(null);
+            return true;
+        }
+
+        if(id == R.id.borrarM){
+            //llevar a la actividad de borrar
+            eliminar(null);
             return true;
         }
 

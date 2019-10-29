@@ -4,14 +4,14 @@
     tools:context=".MainActivity"
     >
 
-    <item
-        android:id="@+id/borrarM"
-        android:title="Borrar"
-        ></item>
+
 
     <item
         android:id="@+id/agregarM"
         android:title="Añadir"
         ></item>
-
+    <item
+        android:id="@+id/borrarM"
+        android:title="Borrar"
+        ></item>
 </menu>
