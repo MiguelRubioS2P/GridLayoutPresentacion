@@ -48,7 +48,7 @@ public class Prueba extends AppCompatActivity {
         String nombre = editCampoNombre.getText().toString();
 
         sp.edit().remove(nombre).apply();
-        
+
     }
 
     //Creación del menú ----------------------------------------------------------------------------
