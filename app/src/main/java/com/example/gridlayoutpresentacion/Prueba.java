@@ -12,6 +12,7 @@ import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +49,8 @@ public class Prueba extends AppCompatActivity {
         String nombre = editCampoNombre.getText().toString();
 
         sp.edit().remove(nombre).apply();
+        editCampoNombre.setText("");
+        Toast.makeText(this,"Ha sido eliminado", Toast.LENGTH_LONG).show();
 
     }
 

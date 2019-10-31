@@ -129,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
         if(!prefStringFecha.isEmpty()){
             calendario.setDate(cumpleFecha(prefStringFecha),true,true);
             campoText.setText("");
+        }else{
+            campoText.setError("No esta guardado ese nombre en la app.");
         }
         
     }
@@ -149,15 +151,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(id == R.id.agregarM){
-            //llevar a la actividad de agregar
+
             agregar(null);
             return true;
+
         }
 
         if(id == R.id.borrarM){
-            //llevar a la actividad de borrar
+
             ir(null);
             return true;
+
         }
 
         return super.onOptionsItemSelected(opcionMenu);
